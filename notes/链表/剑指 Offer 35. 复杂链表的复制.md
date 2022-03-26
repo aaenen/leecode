@@ -1,15 +1,20 @@
-package com.sword;
-
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * 复杂链表（双链表）的复制
- * 请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，
- * 还有一个 random 指针指向链表中的任意节点或者 null。
- * 输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
- * 输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
- */
+# 剑指 Offer 35. 复杂链表的复制
+```text
+请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。
+```
+**示例1：**
+![img.png](../picts/img.png)
+```text
+输入：head = [[7,null],[13,0],[11,4],[10,2],[1,0]]
+输出：[[7,null],[13,0],[11,4],[10,2],[1,0]]
+```
+**示例2：**
+![img.png](../picts/img2.png)
+```text
+输入：head = [[1,1],[2,1]]
+输出：[[1,1],[2,1]]
+```
+```java
 public class CopyRandomList {
     // Definition for a Node.
     class Node {
@@ -24,9 +29,7 @@ public class CopyRandomList {
         }
     }
 
-    /**
-     * 方法一：迭代+结点拆分
-     */
+    //方法一：迭代+结点拆分
     public Node copyRandomList(Node head) {
         if (head == null) {
             return null;
@@ -80,3 +83,4 @@ public class CopyRandomList {
         return cachedNode.get(head);
     }
 }
+```

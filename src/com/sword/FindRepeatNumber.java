@@ -1,7 +1,9 @@
 package com.sword;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * 找出数组中重复的数字。
@@ -26,6 +28,15 @@ public class FindRepeatNumber {
         Arrays.sort(nums);
         for (int i = 0; i < nums.length - 1; i++) {
             if (nums[i] == nums[i + 1]) return nums[i];
+        }
+        return -1;
+    }
+    public int findRepeatNumber2(int[] nums){
+        Set<Integer> dic = new HashSet<>();
+        for (int num : nums){
+            //Java 集合类中的 Set.contains() 方法判断 Set 集合是否包含指定的对象。该方法返回值为 boolean 类型，如果 Set 集合包含指定的对象，则返回 true，否则返回 false。
+            if(dic.contains(num)) return num;
+            dic.add(num);
         }
         return -1;
     }

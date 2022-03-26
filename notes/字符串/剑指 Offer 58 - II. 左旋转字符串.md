@@ -1,11 +1,19 @@
-package com.sword;
-
-/**
- * 左旋转字符串
- * 字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。
- * 请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串"abcdefg"和数字2，
- * 该函数将返回左旋转两位得到的结果"cdefgab"。
- */
+# 剑指 Offer 58 - II. 左旋转字符串
+```text
+字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如，输入字符串"abcdefg"和数字2，该函数将返回左旋转两位得到的结果"cdefgab"。
+```
+**示例1：**
+```text
+输入: s = "abcdefg", k = 2
+输出: "cdefgab"
+```
+**示例2：**
+```text
+输入: s = "lrloseumgh", k = 6
+输出: "umghlrlose"
+```
+**这道题最好的方法就是方法二的分别翻转，最后再整体翻转**
+```java
 public class ReverseLeftWords {
     //方法一：字符串切片
     //把字符串在n处切成前后两部分，然后再把这两部分拼在一起
@@ -35,6 +43,7 @@ public class ReverseLeftWords {
     }
     public static void reverseString(StringBuilder sb, int start, int end) {
         while (start < end) {
+            //这个翻转看起来很高级，其实还是tmp = a；a = b; b = tmp;
             char temp = sb.charAt(start);
             //charAt(int i)方法返回字符串指定位置i的字符
             //setCharAt（int i,char b）将字符串第i个位置字符改为b
@@ -45,3 +54,4 @@ public class ReverseLeftWords {
         }
     }
 }
+```
