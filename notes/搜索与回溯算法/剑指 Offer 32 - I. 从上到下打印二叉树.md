@@ -1,22 +1,21 @@
-package com.sword;
+# 剑指 Offer 32 - I. 从上到下打印二叉树
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
+```text
+从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 
-/**
- * 从上到下打印二叉树
- * 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
- * 例如:
- * 给定二叉树: [3,9,20,null,null,15,7],
- * 3
- * / \
- * 9  20
- * /  \
- * 15   7
- * 返回：
- * [3,9,20,15,7]
- */
+例如:
+给定二叉树: [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+返回：
+[3,9,20,15,7]
+```
+
+```java
 public class LevelOrder {
     public class TreeNode {
         int val;
@@ -49,3 +48,4 @@ public class LevelOrder {
         }
     }
 }
+```

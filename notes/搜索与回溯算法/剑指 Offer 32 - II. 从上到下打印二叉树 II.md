@@ -1,27 +1,25 @@
-package com.sword;
+# 剑指 Offer 32 - II. 从上到下打印二叉树 II
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+```text
+从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
 
-/**
- * 从上到下打印二叉树ii
- * 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
- * 例如:
- * 给定二叉树: [3,9,20,null,null,15,7],
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
- * 返回其层次遍历结果：
- * [
- *   [3],
- *   [9,20],
- *   [15,7]
- * ]
- */
+例如:
+给定二叉树: [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+   
+返回其层次遍历结果：
+[
+  [3],
+  [9,20],
+  [15,7]
+]
+```
+
+```java
 public class LevelOrderRow {
     public class TreeNode {
         int val;
@@ -44,6 +42,7 @@ public class LevelOrderRow {
         //BFS 循环： 当队列 queue 为空时跳出；
         while (!queue.isEmpty()) {
             //新建一个临时列表 tmp ，用于存储当前层打印结果；
+            //每次都新建，就可以保证一行一行打印了
             List<Integer> tmp = new ArrayList<>();
             //当前层打印循环： 循环次数为当前层节点数（即队列 queue 长度）；
             //关键点就在这里，这里判断每一层的长度，一层一层来操作，分层的关键
@@ -63,3 +62,4 @@ public class LevelOrderRow {
         return res;
     }
 }
+```
